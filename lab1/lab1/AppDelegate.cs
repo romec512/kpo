@@ -34,12 +34,27 @@ namespace Kpo4310_asadovrs.Main
 
         [Export("actionOpen:")]
         public void actionOpen(NSObject sender){
-            try{
-                throw new NotImplementedException();
-            } catch (NotImplementedException){
+            try
+            {
+                //Вызов исключения "Метод не реализован"
+                //throw new NotImplementedException();
+                //Вызов базового исключения
+                throw new Exception("Неправильные входные параметры");
+            }
+            //обработка исключения "Метод не реализован"
+            catch (NotImplementedException ex)
+            {
                 NSAlert alert = new NSAlert();
-                alert.MessageText = "Что-то не так";
-                alert.InformativeText = "Кажется, что что-то пошло не так";
+                alert.MessageText = "Возникла ошибка";
+                alert.InformativeText = "Ошибка №1: " + ex.Message ;
+                alert.RunModal();
+            }
+            //обработка остальных исключений
+            catch (Exception ex)
+            {
+                NSAlert alert = new NSAlert();
+                alert.MessageText = "Возникла ошибка";
+                alert.InformativeText = "Ошибка №2: " + ex.Message;
                 alert.RunModal();
             }
         }
