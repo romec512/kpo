@@ -7,6 +7,7 @@ namespace Kpo4310_asadovrs.Lib
     {
         public MockSubstanceListCommand()
         {
+            _substanceList = new List<Substance>();
         }
 
         private readonly string _dataFileName = "";
@@ -52,6 +53,7 @@ namespace Kpo4310_asadovrs.Lib
                 };
                 substanceList.Add(substance);
             }
+            throw new Exception("Опять какая то ошибка");
         }
     }
 }

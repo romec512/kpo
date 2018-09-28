@@ -54,11 +54,14 @@
     <Compile Include="Source\Log\LogUtility.cs" />
     <Compile Include="Source\Classes\Substance.cs" />
     <Compile Include="Source\Classes\MockSubstanceListCommand.cs" />
+    <Compile Include="Source\TableWorker\SubstanceTableDataSource.cs" />
+    <Compile Include="Source\TableWorker\SubstanceTableDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Source\" />
     <Folder Include="Source\Log\" />
     <Folder Include="Source\Classes\" />
+    <Folder Include="Source\TableWorker\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>

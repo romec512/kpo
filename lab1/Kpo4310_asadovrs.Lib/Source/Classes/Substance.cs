@@ -11,7 +11,7 @@ namespace Kpo4310_asadovrs.Lib
         public Substance()
         {
             name = "";
-            type = '';
+            type = 'A';
             lowTemperature = 0;
             highTemperature = 0;
         }
