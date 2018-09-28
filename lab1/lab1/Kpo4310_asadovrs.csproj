@@ -83,5 +83,11 @@
   <ItemGroup>
     <InterfaceDefinition Include="MainForm.storyboard" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kpo4310_asadovrs.Lib\Kpo4310_asadovrs.Lib.csproj">
+      <Project>{5CC6AA58-A33A-48B0-AB5B-E3164D0B7911}</Project>
+      <Name>Kpo4310_asadovrs.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>

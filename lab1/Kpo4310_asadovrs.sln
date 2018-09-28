@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4310_asadovrs", "lab1\Kpo4310_asadovrs.csproj", "{2BCF9CE6-C770-4FD6-9EC6-B4C6DFA2BD75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4310_asadovrs.Lib", "Kpo4310_asadovrs.Lib\Kpo4310_asadovrs.Lib.csproj", "{5EA9F735-2FCB-48B9-A0B5-4FE4EC666E0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4310_asadovrs.Lib", "Kpo4310_asadovrs.Lib\Kpo4310_asadovrs.Lib.csproj", "{5CC6AA58-A33A-48B0-AB5B-E3164D0B7911}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +15,9 @@ Global
 		{2BCF9CE6-C770-4FD6-9EC6-B4C6DFA2BD75}.Debug|x86.Build.0 = Debug|x86
 		{2BCF9CE6-C770-4FD6-9EC6-B4C6DFA2BD75}.Release|x86.ActiveCfg = Release|x86
 		{2BCF9CE6-C770-4FD6-9EC6-B4C6DFA2BD75}.Release|x86.Build.0 = Release|x86
-		{5EA9F735-2FCB-48B9-A0B5-4FE4EC666E0B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5EA9F735-2FCB-48B9-A0B5-4FE4EC666E0B}.Debug|x86.Build.0 = Debug|Any CPU
-		{5EA9F735-2FCB-48B9-A0B5-4FE4EC666E0B}.Release|x86.ActiveCfg = Release|Any CPU
-		{5EA9F735-2FCB-48B9-A0B5-4FE4EC666E0B}.Release|x86.Build.0 = Release|Any CPU
+		{5CC6AA58-A33A-48B0-AB5B-E3164D0B7911}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5CC6AA58-A33A-48B0-AB5B-E3164D0B7911}.Debug|x86.Build.0 = Debug|Any CPU
+		{5CC6AA58-A33A-48B0-AB5B-E3164D0B7911}.Release|x86.ActiveCfg = Release|Any CPU
+		{5CC6AA58-A33A-48B0-AB5B-E3164D0B7911}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

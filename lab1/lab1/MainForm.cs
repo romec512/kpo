@@ -1,5 +1,4 @@
 ﻿using AppKit;
-
 namespace Kpo4310_asadovrs.Main
 {
     static class MainClass

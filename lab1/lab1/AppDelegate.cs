@@ -1,6 +1,7 @@
 ﻿using System;
 using AppKit;
 using Foundation;
+using Kpo4310_asadovrs.Lib;
 
 namespace Kpo4310_asadovrs.Main
 {
@@ -29,7 +30,8 @@ namespace Kpo4310_asadovrs.Main
         [Export("actionEscape:")]
         public void actionEscape(NSObject sender){
            var window =  NSApplication.SharedApplication.Windows[0];
-            window.PerformClose(window);
+            //window.PerformClose(window);
+            Environment.Exit(0);
         }
 
         [Export("actionOpen:")]
@@ -48,6 +50,8 @@ namespace Kpo4310_asadovrs.Main
                 alert.MessageText = "Возникла ошибка";
                 alert.InformativeText = "Ошибка №1: " + ex.Message ;
                 alert.RunModal();
+                LogUtility.ErrorLog("Ошибка №1: " + ex.Message);
+
             }
             //обработка остальных исключений
             catch (Exception ex)
@@ -56,6 +60,7 @@ namespace Kpo4310_asadovrs.Main
                 alert.MessageText = "Возникла ошибка";
                 alert.InformativeText = "Ошибка №2: " + ex.Message;
                 alert.RunModal();
+                LogUtility.ErrorLog("Ошибка №2: " + ex.Message);
             }
         }
 
