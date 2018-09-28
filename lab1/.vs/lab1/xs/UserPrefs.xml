@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{2BCF9CE6-C770-4FD6-9EC6-B4C6DFA2BD75}|Default">
   <MonoDevelop.Ide.ItemProperties.lab1 PreferredExecutionTarget="Test1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Состояние: lab1">
+  <MonoDevelop.Ide.Workbench ActiveDocument="lab1/AppDelegate.cs">
     <Files>
       <File FileName="lab1/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="Состояние: lab1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
