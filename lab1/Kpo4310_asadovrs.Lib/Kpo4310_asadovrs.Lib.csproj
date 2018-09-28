@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Log\LogUtility.cs" />
     <Compile Include="Source\Classes\Substance.cs" />
+    <Compile Include="Source\Classes\MockSubstanceListCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Source\" />
