@@ -52,10 +52,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Log\LogUtility.cs" />
+    <Compile Include="Source\Classes\Substance.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Source\" />
     <Folder Include="Source\Log\" />
+    <Folder Include="Source\Classes\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
