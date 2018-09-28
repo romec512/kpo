@@ -1,10 +1,12 @@
 ﻿using System;
-namespace Kpo4310_asadovrs.Lib.Source.Log
-{
-    public class LogUtility
+using System.IO;
+
+namespace Kpo4310_asadovrs.Lib{
+    public static class LogUtility
     {
-        public LogUtility()
+        public static void ErrorLog(string message)
         {
+            File.AppendAllText("error.log", message);
         }
     }
 }
