@@ -20,7 +20,8 @@ namespace lab1Kpo4310_asadovrs.Main
         {
             base.ViewDidLoad();
             // Do any additional setup after loading the view.
-
+            TFLogPath.StringValue = Kpo4310_asadovrs.AppGlobalSettings.LogPath;
+            TFDataFileName.StringValue = Kpo4310_asadovrs.AppGlobalSettings.DataFileName;
         }
 
         public override NSObject RepresentedObject

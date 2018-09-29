@@ -5,6 +5,7 @@ namespace Kpo4310_asadovrs.Main
     {
         static void Main(string[] args)
         {
+            Kpo4310_asadovrs.AppGlobalSettings.Initialize();
             NSApplication.Init();
             NSApplication.Main(args);
         }

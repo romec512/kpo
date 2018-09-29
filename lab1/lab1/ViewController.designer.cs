@@ -29,6 +29,12 @@ namespace lab1Kpo4310_asadovrs.Main
 
 		[Outlet]
 		AppKit.NSTableView TableView { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField TFDataFileName { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField TFLogPath { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -60,6 +66,16 @@ namespace lab1Kpo4310_asadovrs.Main
 			if (TableView != null) {
 				TableView.Dispose ();
 				TableView = null;
+			}
+
+			if (TFLogPath != null) {
+				TFLogPath.Dispose ();
+				TFLogPath = null;
+			}
+
+			if (TFDataFileName != null) {
+				TFDataFileName.Dispose ();
+				TFDataFileName = null;
 			}
 		}
 	}
