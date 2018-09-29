@@ -9,6 +9,9 @@ namespace lab1Kpo4310_asadovrs.Main
 {
     public partial class ViewController : NSViewController
     {
+        //private BindingSource bsEmploees = new BindingSource();
+
+
         public ViewController(IntPtr handle) : base(handle)
         {
         }
@@ -60,6 +63,27 @@ namespace lab1Kpo4310_asadovrs.Main
                 alert.RunModal();
                 LogUtility.ErrorLog("Ошибка №2: " + ex.Message);
             }
+        }
+
+        [Export("openSubstance:")]
+        public void openSubstance(NSObject sender){
+            var storyboard = NSStoryboard.FromName("MainForm", null);
+            var controller = storyboard.InstantiateControllerWithIdentifier("MyTestWindow") as NSWindowController;
+            
+            // Display
+            controller.ShowWindow(this);
+        }
+
+        [Export("SelectRow:")]
+        public void getSelectedRow(NSObject sender){
+            var source = TableView.DataSource as SubstanceTableDataSource;
+
+            var storyboard = NSStoryboard.FromName("MainForm", null);
+            var controller = storyboard.InstantiateControllerWithIdentifier("MyTestWindow") as NSWindowController;
+            var viewController = controller.ContentViewController as SearchFormViewController;
+            viewController.SetSubstance(source.GetRow(TableView.SelectedRow));
+            controller.ShowWindow(this);
+
         }
     }
 }

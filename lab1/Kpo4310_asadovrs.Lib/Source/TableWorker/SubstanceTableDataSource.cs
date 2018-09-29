@@ -19,6 +19,10 @@ namespace Kpo4310_asadovrs.Lib
         {
             return Substances.Count;
         }
+
+        public Substance GetRow(nint id){
+            return Substances[(int)id];
+        }
         #endregion
     }
 }

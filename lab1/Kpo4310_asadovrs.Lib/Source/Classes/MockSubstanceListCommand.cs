@@ -53,7 +53,16 @@ namespace Kpo4310_asadovrs.Lib
                 };
                 substanceList.Add(substance);
             }
-            throw new Exception("Опять какая то ошибка");
+            //throw new Exception("Опять какая то ошибка");
+        }
+
+        public Substance SearchSubstance(string searchName){
+            foreach(Substance sub in substanceList){
+                if(sub.name == searchName){
+                    return sub;
+                }
+            }
+            return null;
         }
     }
 }

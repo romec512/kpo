@@ -82,6 +82,18 @@
     <Compile Include="AppDelegate.designer.cs">
       <DependentUpon>AppDelegate.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchFormViewController.cs" />
+    <Compile Include="SearchFormViewController.designer.cs">
+      <DependentUpon>SearchFormViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyTestWindow.cs" />
+    <Compile Include="MyTestWindow.designer.cs">
+      <DependentUpon>MyTestWindow.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainForm.storyboard" />

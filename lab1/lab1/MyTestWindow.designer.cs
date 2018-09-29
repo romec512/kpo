@@ -9,7 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace Kpo4310_asadovrs.Main
 {
-	partial class AppDelegate
+	[Register ("MyTestWindow")]
+	partial class MyTestWindow
 	{
 		
 		void ReleaseDesignerOutlets ()
