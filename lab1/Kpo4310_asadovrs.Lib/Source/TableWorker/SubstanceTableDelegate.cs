@@ -53,7 +53,7 @@ namespace Kpo4310_asadovrs.Lib
                         view.StringValue = "Металл";
                     } else if(DataSource.Substances[(int)row].type == 'C'){
                         view.StringValue = "Соединение";
-                    } else if(DataSource.Substances[(int)row].type == 'П'){
+                    } else if(DataSource.Substances[(int)row].type == 'P'){
                         view.StringValue = "Сплав";
                     }
                     break;

@@ -29,26 +29,22 @@ namespace Kpo4310_asadovrs.Main
             fillTextFields(sub);
 
         }
-        [Export("buttonClick:")]
-        public void buttonClick(Foundation.NSObject sender)
-        {
-            MockSubstanceListCommand loader = new MockSubstanceListCommand();
-            loader.Execute();
-            var result = loader.SearchSubstance(searchName.StringValue);
-            fillTextFields(result);
-        }
 
         private void fillTextFields(Substance substance){
             TFName.Enabled = true;
+            TFName.Selectable = false;
             TFName.StringValue = substance.name;
 
             TFType.Enabled = true;
+            TFType.Selectable = false;
             TFType.StringValue = substance.type.ToString();
 
             TFMinTemp.Enabled = true;
+            TFMinTemp.Selectable = false;
             TFMinTemp.StringValue = substance.lowTemperature.ToString();
 
             TFMaxTemp.Enabled = true;
+            TFMaxTemp.Selectable = false;
             TFMaxTemp.StringValue = substance.highTemperature.ToString();
         }
 	}

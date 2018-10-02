@@ -70,6 +70,7 @@
     <Compile Include="Source\TableWorker\SubstanceTableDelegate.cs" />
     <Compile Include="Source\Utility\AppConfigUtility.cs" />
     <Compile Include="Source\Common\AppGlobalSettings.cs" />
+    <Compile Include="Source\Classes\LoadSubstancesListCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Source\" />

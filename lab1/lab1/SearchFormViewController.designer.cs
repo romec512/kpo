@@ -13,12 +13,6 @@ namespace Kpo4310_asadovrs.Main
 	partial class SearchFormViewController
 	{
 		[Outlet]
-		AppKit.NSButton buttonSeacrh { get; set; }
-
-		[Outlet]
-		AppKit.NSTextField searchName { get; set; }
-
-		[Outlet]
 		AppKit.NSTextField TFMaxTemp { get; set; }
 
 		[Outlet]
@@ -32,14 +26,14 @@ namespace Kpo4310_asadovrs.Main
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (buttonSeacrh != null) {
-				buttonSeacrh.Dispose ();
-				buttonSeacrh = null;
+			if (TFMaxTemp != null) {
+				TFMaxTemp.Dispose ();
+				TFMaxTemp = null;
 			}
 
-			if (searchName != null) {
-				searchName.Dispose ();
-				searchName = null;
+			if (TFMinTemp != null) {
+				TFMinTemp.Dispose ();
+				TFMinTemp = null;
 			}
 
 			if (TFName != null) {
@@ -50,16 +44,6 @@ namespace Kpo4310_asadovrs.Main
 			if (TFType != null) {
 				TFType.Dispose ();
 				TFType = null;
-			}
-
-			if (TFMinTemp != null) {
-				TFMinTemp.Dispose ();
-				TFMinTemp = null;
-			}
-
-			if (TFMaxTemp != null) {
-				TFMaxTemp.Dispose ();
-				TFMaxTemp = null;
 			}
 		}
 	}
