@@ -5,17 +5,13 @@ using AppKit;
 
 namespace Kpo4310_asadovrs.Lib
 {
-    public enum LoadStatus
+    public class LoadSubstancesListSplitFileLoader : ISubstanceListLoader
     {
-        None = 0,
-        Success = 1,
-        FileNameIsEmpty = -1,
-        FileNotExists = -2,
-        GeneralError = -100
-    }
+        public LoadSubstancesListSplitFileLoader(string FileName)
+        {
+            _dataFileName = FileName;
+        }
 
-    public class LoadSubstancesListCommand : ISubstanceListLoader
-    {
         private List<Substance> _substances;
         private LoadStatus _status = LoadStatus.None;
         private readonly string _dataFileName = "";
@@ -26,14 +22,12 @@ namespace Kpo4310_asadovrs.Lib
                 return _substances;
             }
         }
-        public LoadStatus Status {
-            get {
+        public LoadStatus Status
+        {
+            get
+            {
                 return _status;
             }
-        }
-        public LoadSubstancesListCommand(string FileName)
-        {
-            _dataFileName = FileName;
         }
 
         public void Execute()
@@ -53,8 +47,10 @@ namespace Kpo4310_asadovrs.Lib
 
             StreamReader reader = null;
             _substances = new List<Substance>();
-            using (reader = new StreamReader(_dataFileName)) {
-                while(!reader.EndOfStream){
+            using (reader = new StreamReader(_dataFileName))
+            {
+                while (!reader.EndOfStream)
+                {
                     try
                     {
                         string str = reader.ReadLine();
@@ -67,7 +63,9 @@ namespace Kpo4310_asadovrs.Lib
                             lowTemperature = (float)Convert.ToDouble(array[2]),
                             highTemperature = (float)Convert.ToDouble(array[3])
                         });
-                    } catch (Exception ex){
+                    }
+                    catch (Exception ex)
+                    {
                         LogUtility.ErrorLog(ex.Message);
                         _status = LoadStatus.GeneralError;
                         var alert = new NSAlert();
@@ -80,7 +78,8 @@ namespace Kpo4310_asadovrs.Lib
             }
         }
 
-        public List<Substance> GetSubstances(){
+        public List<Substance> GetSubstances()
+        {
             return _substances;
         }
     }

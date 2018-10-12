@@ -50,10 +50,10 @@ namespace lab1Kpo4310_asadovrs.Main
             {
                 //MockSubstanceListCommand loader = new MockSubstanceListCommand();
                 //loader.Execute();
-                LoadSubstancesListCommand loader = new LoadSubstancesListCommand(Kpo4310_asadovrs.AppGlobalSettings.DataFileName);
+                ISubstanceListLoader loader = new LoadSubstancesListSplitFileLoader(Kpo4310_asadovrs.AppGlobalSettings.DataFileName);
                 loader.Execute();
                 var data = new SubstanceTableDataSource();
-                data.Substances = loader.Substances;
+                data.Substances = loader.GetSubstances();
                 TableView.DataSource = data;
                 TableView.Delegate = new SubstanceTableDelegate(data);
 
