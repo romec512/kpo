@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Kpo4310_asadovrs.Lib
 {
-    public class MockSubstanceListCommand
+    public class MockSubstanceListCommand : ISubstanceListLoader
     {
         public MockSubstanceListCommand()
         {
@@ -63,6 +63,10 @@ namespace Kpo4310_asadovrs.Lib
                 }
             }
             return null;
+        }
+
+        public List<Substance> GetSubstances(){
+            return _substanceList;
         }
     }
 }

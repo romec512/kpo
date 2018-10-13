@@ -19,7 +19,8 @@ namespace Kpo4310_asadovrs.Lib
             }
         }
 
-        public static void ErrorLog(Exception ex){
+        public static void ErrorLog(Exception ex)
+        {
             File.AppendAllText("error.log", DateTime.Now + " " + ex.Message + "\n");
         }
     }

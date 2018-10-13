@@ -74,7 +74,10 @@ namespace Kpo4310_asadovrs.Lib
                         alert.RunModal();
                     }
                 }
-                _status = LoadStatus.Success;
+                if (_status != LoadStatus.GeneralError)
+                {
+                    _status = LoadStatus.Success;
+                }
             }
         }
 
