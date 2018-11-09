@@ -80,6 +80,7 @@
     <Compile Include="Source\Classes\SubstanceTestFactory.cs" />
     <Compile Include="Source\Classes\SubstanceFileFactory.cs" />
     <Compile Include="Source\Classes\SaveStatus.cs" />
+    <Compile Include="Source\Log\LogFileUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Source\" />
