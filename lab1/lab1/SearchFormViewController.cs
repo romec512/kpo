@@ -7,6 +7,7 @@ using AppKit;
 using System.Collections.Generic;
 using Kpo4310_asadovrs.Lib;
 using Kpo4310_asadovrs.Utility;
+using Kpo4310_asadovrs.Lib.Exceptions;
 
 namespace Kpo4310_asadovrs.Main
 {
@@ -65,6 +66,11 @@ namespace Kpo4310_asadovrs.Main
         {
             try
             {
+                double temp;
+                if(!Double.TryParse(TFMaxTemp.StringValue, out temp) || !Double.TryParse(TFMinTemp.StringValue, out temp))
+                {
+                    throw new IncorrectInputDataException("Вы ввели некорректные данные, пожалуйста проверьте их и попробуйте сначала");
+                }
                 var substance = new Substance()
                 {
                     name = TFName.StringValue,
@@ -72,8 +78,7 @@ namespace Kpo4310_asadovrs.Main
                     highTemperature = TFMaxTemp.FloatValue,
                     lowTemperature = TFMinTemp.FloatValue
                 };
-                ISubFactory factory = new SubstanceFileFactory();
-                SubListSaverInterface saver = factory.CreateSaver();
+                SubListSaverInterface saver = Kpo4310_asadovrs.AppGlobalSettings.Factory.CreateSaver();
                 saver.Substance = substance;
                 saver.Execute();
                 if(saver.SaveStatus == SaveStatus.Success) {
@@ -83,11 +88,20 @@ namespace Kpo4310_asadovrs.Main
                     alert.RunModal();
                 }
             }
+            catch (IncorrectInputDataException ex)
+            {
+                var alert = new NSAlert();
+                alert.MessageText = "Некорректные данные";
+                alert.InformativeText = ex.Message;
+                alert.RunModal();
+                LogFileUtility.ErrorLog(ex.Message);
+            }
             catch (Exception e){
                 var alert = new NSAlert();
                 alert.MessageText = "Ошибка";
                 alert.InformativeText = "Неправильно введены данные";
                 alert.RunModal();
+                LogFileUtility.ErrorLog(e.Message); 
             }
         }
 	}

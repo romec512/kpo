@@ -50,15 +50,13 @@ namespace lab1Kpo4310_asadovrs.Main
             {
                 //MockSubstanceListCommand loader = new MockSubstanceListCommand();
                 //loader.Execute();
-                //ISubFactory factory = new SubstanceFileFactory();
-                ISubFactory factory = new SubstanceTestFactory();
-                ISubstanceListLoader loader = factory.CreateLoader();
+                //ISubFactory factory = new SubstanceTestFactory();
+                ISubstanceListLoader loader = Kpo4310_asadovrs.AppGlobalSettings.Factory.CreateLoader();
                 loader.Execute();
                 var data = new SubstanceTableDataSource();
                 data.Substances = loader.GetSubstances();
                 TableView.DataSource = data;
                 TableView.Delegate = new SubstanceTableDelegate(data);
-
             }
             catch (Exception ex)
             {
@@ -67,6 +65,7 @@ namespace lab1Kpo4310_asadovrs.Main
                 alert.InformativeText = "Ошибка №2: " + ex.Message;
                 alert.RunModal();
                 LogUtility.ErrorLog("Ошибка №2: " + ex.Message);
+                LogFileUtility.ErrorLog(ex.Message);
             }
         }
 

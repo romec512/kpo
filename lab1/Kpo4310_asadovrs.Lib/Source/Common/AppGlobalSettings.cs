@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using Kpo4310_asadovrs.Lib;
 
 namespace Kpo4310_asadovrs
 {
@@ -7,7 +8,8 @@ namespace Kpo4310_asadovrs
     {
         private static string _logPath;
         private static string _dataFileName;
-
+        private static string _logFileName;
+        private static ISubFactory _factory;
         public static string LogPath {
             get {
                 return _logPath;
@@ -19,9 +21,29 @@ namespace Kpo4310_asadovrs
             }
         }
 
+        public static string LogFileName
+        {
+            get
+            {
+                return _logFileName;
+            }
+        }
+
+        public static ISubFactory Factory
+        {
+            get
+            {
+                return _factory;
+            }
+        }
+
         public static void Initialize(){
             _logPath = ConfigurationManager.AppSettings["logPath"];
             _dataFileName = ConfigurationManager.AppSettings["dataFileName"];
+            _logFileName = ConfigurationManager.AppSettings["logFileName"];
+            _factory = new SubstanceFileFactory();
+
+
         }
     }
 }

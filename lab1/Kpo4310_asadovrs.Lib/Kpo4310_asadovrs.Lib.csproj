@@ -81,6 +81,7 @@
     <Compile Include="Source\Classes\SubstanceFileFactory.cs" />
     <Compile Include="Source\Classes\SaveStatus.cs" />
     <Compile Include="Source\Log\LogFileUtility.cs" />
+    <Compile Include="Source\Exceptions\IncorrectInputDataException.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Source\" />
@@ -89,6 +90,7 @@
     <Folder Include="Source\TableWorker\" />
     <Folder Include="Source\Utility\" />
     <Folder Include="Source\Common\" />
+    <Folder Include="Source\Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

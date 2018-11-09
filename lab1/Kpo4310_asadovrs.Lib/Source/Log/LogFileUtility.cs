@@ -1,25 +1,34 @@
 ﻿using System;
-namespace Kpo4310_asadovrs.Lib.Source.Log
+using System.IO;
+using AppKit;
+using Kpo4310_asadovrs.Utility;
+
+namespace Kpo4310_asadovrs.Lib
 {
-    public class LogFileUtility
+    public static class LogFileUtility
     {
-        private string _fileName;
-        public string FileName {
-            get {
-                return _fileName;
-            }
-            set {
-                _fileName = value;
-            }
-        }
-
-        public LogFileUtility()
-        {
-            _fileName = "error.log";
-        }
-
-
+    
         public static void ErrorLog(string message){
+
+            var configManager = new AppConfigUtility();
+            string _fileName = Kpo4310_asadovrs.AppGlobalSettings.LogFileName;
+            System.Diagnostics.Debug.Assert(_fileName == "", "Имя файла задано");
+            FileStream fstream = new FileStream(_fileName, FileMode.OpenOrCreate);
+            try
+            {
+                using (fstream)
+                {
+                    byte[] array = System.Text.Encoding.Default.GetBytes(DateTime.Now + ": " + message);
+                    fstream.Write(array, 0, array.Length);
+                }
+            } catch (Exception e){
+                var alert = new NSAlert();
+                alert.MessageText = "Возникла ошибка";
+                alert.InformativeText = "Ошибка №4: " + e.Message;
+                alert.RunModal();
+            } finally {
+                fstream.Close();
+            }
 
         }
 
