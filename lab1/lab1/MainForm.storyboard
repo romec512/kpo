@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Window Controller-->
@@ -30,7 +31,7 @@
         <scene sceneID="go2-dn-Gl1">
             <objects>
                 <viewController id="BFN-s4-Ej4" customClass="SearchFormViewController" sceneMemberID="viewController">
-                    <view key="view" id="3Z9-yf-Yul">
+                    <view key="view" wantsLayer="YES" id="3Z9-yf-Yul">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -106,9 +107,32 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkC-Pr-CxS">
+                                <rect key="frame" x="382" y="152" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OMf-7T-Y51">
+                                        <rect key="frame" x="-6" y="-7" width="101" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Добавить" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" baseWritingDirection="leftToRight" imageScaling="proportionallyDown" inset="2" id="W6p-bx-jcM">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <connections>
+                                                <action selector="ButtonAddClick:" target="BFN-s4-Ej4" id="V6Z-D9-eJI"/>
+                                            </connections>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="AddButton" destination="OMf-7T-Y51" id="dLU-tM-EOO"/>
                         <outlet property="TFMaxTemp" destination="m9a-qv-BSG" id="TMF-QN-Ptg"/>
                         <outlet property="TFMinTemp" destination="7Pu-p2-3mG" id="KfK-tE-74k"/>
                         <outlet property="TFName" destination="uAE-52-vjI" id="ohw-h9-cIN"/>
@@ -196,6 +220,12 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="openSubstance:" target="Ady-hI-5gd" id="Wdy-j1-Hos"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Добавить вещество" id="YTW-kh-ojO">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="actionAddSubstance:" target="Ady-hI-5gd" id="TZF-oo-b86"/>
                                             </connections>
                                         </menuItem>
                                     </items>

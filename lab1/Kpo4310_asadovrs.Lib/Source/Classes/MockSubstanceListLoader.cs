@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Kpo4310_asadovrs.Lib
 {
-    public class MockSubstanceListCommand : ISubstanceListLoader
+    public class MockSubstanceListLoader : ISubstanceListLoader
     {
-        public MockSubstanceListCommand()
+        public MockSubstanceListLoader()
         {
             _substanceList = new List<Substance>();
         }

@@ -50,7 +50,9 @@ namespace lab1Kpo4310_asadovrs.Main
             {
                 //MockSubstanceListCommand loader = new MockSubstanceListCommand();
                 //loader.Execute();
-                ISubstanceListLoader loader = new LoadSubstancesListSplitFileLoader(Kpo4310_asadovrs.AppGlobalSettings.DataFileName);
+                //ISubFactory factory = new SubstanceFileFactory();
+                ISubFactory factory = new SubstanceTestFactory();
+                ISubstanceListLoader loader = factory.CreateLoader();
                 loader.Execute();
                 var data = new SubstanceTableDataSource();
                 data.Substances = loader.GetSubstances();
@@ -87,6 +89,15 @@ namespace lab1Kpo4310_asadovrs.Main
             viewController.SetSubstance(source.GetRow(TableView.SelectedRow));
             controller.ShowWindow(this);
 
+        }
+
+        [Export("actionAddSubstance:")]
+        public void actionAddSubstance(NSObject sender){
+            var storyboard = NSStoryboard.FromName("MainForm", null);
+            var controller = storyboard.InstantiateControllerWithIdentifier("MyTestWindow") as NSWindowController;
+            var viewController = controller.ContentViewController as SearchFormViewController;
+            viewController.InitializeViewForAddingSubstance(); //Делаем активной кнопку и поля для ввода
+            controller.ShowWindow(this);
         }
     }
 }

@@ -20,17 +20,20 @@ namespace Kpo4310_asadovrs.Main
         }
 
         public SearchFormViewController (IntPtr handle) : base (handle)
-		{
-            _substance = null;
-		}
+        {
+        }
 
-        public void SetSubstance(Substance sub){
+        public void SetSubstance(Substance sub)
+        {
             _substance = sub;
             fillTextFields(sub);
 
         }
 
-        private void fillTextFields(Substance substance){
+        private void fillTextFields(Substance substance)
+        {
+            AddButton.Enabled = false;
+
             TFName.Enabled = true;
             TFName.Selectable = false;
             TFName.StringValue = substance.name;
@@ -46,6 +49,46 @@ namespace Kpo4310_asadovrs.Main
             TFMaxTemp.Enabled = true;
             TFMaxTemp.Selectable = false;
             TFMaxTemp.StringValue = substance.highTemperature.ToString();
+        }
+
+        public void InitializeViewForAddingSubstance()
+        { //Делаем активной кнопку и поля для ввода
+            _substance = null;
+            TFName.Enabled = true;
+            TFType.Enabled = true;
+            TFMinTemp.Enabled = true;
+            TFMaxTemp.Enabled = true;
+            AddButton.Enabled = true;
+        }
+
+        partial void ButtonAddClick(NSObject sender)
+        {
+            try
+            {
+                var substance = new Substance()
+                {
+                    name = TFName.StringValue,
+                    type = TFType.StringValue[0],
+                    highTemperature = TFMaxTemp.FloatValue,
+                    lowTemperature = TFMinTemp.FloatValue
+                };
+                ISubFactory factory = new SubstanceFileFactory();
+                SubListSaverInterface saver = factory.CreateSaver();
+                saver.Substance = substance;
+                saver.Execute();
+                if(saver.SaveStatus == SaveStatus.Success) {
+                    var alert = new NSAlert();
+                    alert.MessageText = "Успех";
+                    alert.InformativeText = "Вещество успешно добавлено";
+                    alert.RunModal();
+                }
+            }
+            catch (Exception e){
+                var alert = new NSAlert();
+                alert.MessageText = "Ошибка";
+                alert.InformativeText = "Неправильно введены данные";
+                alert.RunModal();
+            }
         }
 	}
 }

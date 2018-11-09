@@ -65,7 +65,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Log\LogUtility.cs" />
     <Compile Include="Source\Classes\Substance.cs" />
-    <Compile Include="Source\Classes\MockSubstanceListCommand.cs" />
+    <Compile Include="Source\Classes\MockSubstanceListLoader.cs" />
     <Compile Include="Source\TableWorker\SubstanceTableDataSource.cs" />
     <Compile Include="Source\TableWorker\SubstanceTableDelegate.cs" />
     <Compile Include="Source\Utility\AppConfigUtility.cs" />
@@ -73,6 +73,13 @@
     <Compile Include="Source\Classes\LoadSubstancesListCommand.cs" />
     <Compile Include="Source\Classes\ISubstanceListLoader.cs" />
     <Compile Include="Source\Classes\LoadSubstancesListSplitFileLoader.cs" />
+    <Compile Include="Source\Classes\SubListSaverInterface.cs" />
+    <Compile Include="Source\Classes\SubListTestSaver.cs" />
+    <Compile Include="Source\Classes\SubListFileSaver.cs" />
+    <Compile Include="Source\Classes\ISubFactory.cs" />
+    <Compile Include="Source\Classes\SubstanceTestFactory.cs" />
+    <Compile Include="Source\Classes\SubstanceFileFactory.cs" />
+    <Compile Include="Source\Classes\SaveStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Source\" />

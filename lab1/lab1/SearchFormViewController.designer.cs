@@ -13,6 +13,9 @@ namespace Kpo4310_asadovrs.Main
 	partial class SearchFormViewController
 	{
 		[Outlet]
+		AppKit.NSButton AddButton { get; set; }
+
+		[Outlet]
 		AppKit.NSTextField TFMaxTemp { get; set; }
 
 		[Outlet]
@@ -23,6 +26,12 @@ namespace Kpo4310_asadovrs.Main
 
 		[Outlet]
 		AppKit.NSTextField TFType { get; set; }
+
+		[Action ("ButtonAddClick:")]
+		partial void ButtonAddClick (Foundation.NSObject sender);
+
+		[Action ("ButtondAddClick:")]
+		partial void ButtondAddClick (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -44,6 +53,11 @@ namespace Kpo4310_asadovrs.Main
 			if (TFType != null) {
 				TFType.Dispose ();
 				TFType = null;
+			}
+
+			if (AddButton != null) {
+				AddButton.Dispose ();
+				AddButton = null;
 			}
 		}
 	}
