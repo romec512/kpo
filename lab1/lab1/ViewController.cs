@@ -57,6 +57,7 @@ namespace lab1Kpo4310_asadovrs.Main
                 data.Substances = loader.GetSubstances();
                 TableView.DataSource = data;
                 TableView.Delegate = new SubstanceTableDelegate(data);
+                throw new Exception("test");
             }
             catch (Exception ex)
             {

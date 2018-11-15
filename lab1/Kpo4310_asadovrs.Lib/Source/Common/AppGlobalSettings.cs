@@ -41,7 +41,13 @@ namespace Kpo4310_asadovrs
             _logPath = ConfigurationManager.AppSettings["logPath"];
             _dataFileName = ConfigurationManager.AppSettings["dataFileName"];
             _logFileName = ConfigurationManager.AppSettings["logFileName"];
-            _factory = new SubstanceFileFactory();
+            string _readAndSaveMode = ConfigurationManager.AppSettings["readAndSaveMode"];
+            if (_readAndSaveMode == "file")
+            {
+                _factory = new SubstanceFileFactory();
+            } else {
+                _factory = new SubstanceTestFactory();
+            }
 
 
         }

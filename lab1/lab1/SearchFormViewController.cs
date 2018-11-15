@@ -99,7 +99,7 @@ namespace Kpo4310_asadovrs.Main
             catch (Exception e){
                 var alert = new NSAlert();
                 alert.MessageText = "Ошибка";
-                alert.InformativeText = "Неправильно введены данные";
+                alert.InformativeText = e.Message;
                 alert.RunModal();
                 LogFileUtility.ErrorLog(e.Message); 
             }
